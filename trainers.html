@@ -1,0 +1,80 @@
+<html>
+
+<script src="data.js"></script>
+<head>
+<h1> Trainers </h1>
+</head>
+
+<body>
+<input type="string" placeholder="Enter Name" id="Src"></>
+<button type="submit" onclick=searchName()> Search Name </button>
+<button type="submit" onclick=searchSkill()> Search Skill </button>
+<p id="demo"></p>
+<p id="age"></p>
+<p id="si"></p>
+<p id="skill1"></p>
+
+</body>
+
+<script>
+	var data = data;
+	console.log(data);
+	//console.log(data.members[0]);
+	
+	console.log(data.members[0].name);
+
+	function blank(){
+		
+		document.getElementById("demo").innerHTML = "Not Found";
+		document.getElementById("age").innerHTML =  " ";
+		document.getElementById("si").innerHTML =  " ";
+		document.getElementById("skill1").innerHTML = " ";
+		}
+	
+	function searchName(){
+	var nameSrc = document.getElementById("Src").value;
+	for( var i =0 ; i<data.members.length ; i++) {
+		
+		if((data.members[i].name == nameSrc)){
+		
+		console.log(data.members[i].name);
+		document.getElementById("demo").innerHTML =  data.members[i].name;
+		document.getElementById("age").innerHTML =  data.members[i].age;
+		document.getElementById("si").innerHTML =  data.members[i].secretIdentity;
+		document.getElementById("skill1").innerHTML =  data.members[i].skills;
+		break;
+		}
+		
+		else{
+			
+		blank();
+	}
+	}
+	}
+	
+	function searchSkill(){
+		blank();
+	var skillSrc = document.getElementById("Src").value;
+	var skillpos = "";
+	
+	for( var i =0 ; i<data.members.length ; i++){
+	
+		for ( var j = 0; j<data.members[i].skills.length ; j++){
+			
+			if ( data.members[i].skills[j] == skillSrc){
+			
+				
+				skillpos =  skillpos + data.members[i].name + " , "
+				
+				}
+		}
+	}
+	if ( skillpos != ""){
+	document.getElementById("demo").innerHTML = skillpos 
+	}
+	else {
+	blank()
+	}
+	}
+	
+</script>

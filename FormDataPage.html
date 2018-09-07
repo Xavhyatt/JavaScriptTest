@@ -1,0 +1,39 @@
+<html>
+<head>
+<h1> Form Data </h1>
+</head>
+
+<body>
+
+<p id="info"> The inputted information from the previous page was: </p>
+<p id="name"></p>
+<p id="dob"></p>
+<p id="address"></p>
+<p id="postcode"></p>
+<p id="email"></p>
+
+
+</body>
+
+<script>
+
+
+var data1 = (localStorage.getItem("form1"));
+var data2 = (localStorage.getItem("form2"));
+var data3 = (localStorage.getItem("form3"));
+var data4 = (localStorage.getItem("form4"));
+var data5 = (localStorage.getItem("form5"));
+
+
+console.log(data1);
+
+
+document.getElementById("name").innerHTML = "Name: " +data1;
+document.getElementById("dob").innerHTML = "Date of Birth:  " +data2;
+document.getElementById("address").innerHTML = "Address: " +data3;
+document.getElementById("postcode").innerHTML = "PostCode: " +data4;
+document.getElementById("email").innerHTML = "Email: " +data5;
+
+</script>
+
+</html>
